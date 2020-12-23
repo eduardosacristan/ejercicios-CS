@@ -40,13 +40,11 @@ class ejercicioEntrenamiento
 				  maximo, minimo);
 				 return 0;
 			 }
-			 
 		}
 		else if (args[0] == "multi")
 		{
 			if (args.Length < 3)
 			{
-				
 				Console.WriteLine("Faltan parámetros");
 				return 2;
 			}
