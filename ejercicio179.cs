@@ -56,7 +56,7 @@ class ejercicio179
             }
 
             FileStream ficheroDestino = File.Create(args[1]);
-            fichero.Write(datosOrigen, 0, cantidadLeida);
+            ficheroDestino.Write(datosOrigen, 0, cantidadLeida);
 
             fichero.Close();
             ficheroDestino.Close();
