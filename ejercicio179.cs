@@ -32,12 +32,14 @@ class ejercicio179
         {
             Console.WriteLine("Ya existe un fichero con ese nombre en la " +
                 "ruta de destino");
+            
             return 2;
         }
 
         if (!File.Exists(args[0]))
         {
             Console.WriteLine("El fichero indicado para copiar no existe");
+            
             return 2;
         }
 
@@ -47,7 +49,7 @@ class ejercicio179
             byte[] datosOrigen = new byte[fichero.Length];
 
             int cantidadLeida = fichero.Read(datosOrigen, 0, (int)fichero.Length); //esto es correcto?? y si es mas largo??
-            
+            fichero.Close();
 
             if (cantidadLeida < fichero.Length)
             {
@@ -56,11 +58,8 @@ class ejercicio179
             }
 
             FileStream ficheroDestino = File.Create(args[1]);
-            ficheroDestino.Write(datosOrigen, 0, cantidadLeida);
-
-            fichero.Close();
+            ficheroDestino.Write(datosOrigen, 0, cantidadLeida);            
             ficheroDestino.Close();
-
         }
 
         catch (PathTooLongException)
